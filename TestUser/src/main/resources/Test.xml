@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<suite name="user增删改查套件" thread-count="1">
+
+
+    <test name="user1">
+        <classes>
+            <class name="com.course.cases.LoginCase">
+                <methods>
+                    <include name="loginTrue"/>
+                    <include name="loginFalse"/>
+                </methods>
+            </class>
+            <class name="com.course.cases.AddUserCase">
+                <methods>
+                    <include name="addUser"/>
+                </methods>
+            </class>
+            <class name="com.course.cases.GetUserInfoCase">
+                <methods>
+                    <include name="getUserInfo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+    <listeners>
+        <listener class-name="com.course.config.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>

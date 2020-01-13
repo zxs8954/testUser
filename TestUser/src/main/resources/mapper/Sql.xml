@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.course.cases">
+    <!--    登陆用例-->
+    <select id="loginCase" parameterType="Integer" resultType="com.course.model.Login">
+        select * from loginCase where id=#{id}
+    </select>
+    <!--添加用户用例-->
+    <select id="addUserCase" parameterType="Integer" resultType="com.course.model.AddUser">
+        select * from addUserCase where id=#{id}
+    </select>
+    <!--    从user表中查添加用户-->
+    <select id="addUser" parameterType="com.course.model.AddUser" resultType="com.course.model.User">
+   select * from user where
+        userName=#{userName}
+        and password=#{password}
+        and sex=#{sex}
+        and age=#{age}
+        and permission=#{permission}
+        and isDelete=#{isDelete};
+    </select>
+<!--    从获取用户信息表中获取case-->
+    <select id="getUserInfoCase" parameterType="Integer" resultType="com.course.model.GetUserInfo">
+        select * from getUserInfoCase
+        where id=#{userId}
+    </select>
+<!--    从user表中验证获取用户信息-->
+    <select id="getUserInfo" parameterType="com.course.cases.GetUserInfoCase" resultType="com.course.model.User">
+        select * from User
+        where id=#{userId}
+    </select>
+
+</mapper>
